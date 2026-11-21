@@ -1,0 +1,252 @@
+<?xml version="1.0" ?>
+<robot name="Ackermann_Challenger" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find Ackermann_Challenger_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find Ackermann_Challenger_description)/urdf/Ackermann_Challenger.ros2control" />
+<xacro:include filename="$(find Ackermann_Challenger_description)/urdf/Ackermann_Challenger.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0011039360284308558 0.0 0.035" rpy="0 0 0"/>
+    <mass value="4.007159624381676"/>
+    <inertia ixx="0.003965" iyy="0.080612" izz="0.084511" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="chassis_body_link_1">
+  <inertial>
+    <origin xyz="-0.263538901462959 5.484889589211237e-08 0.0443779972504494" rpy="0 0 0"/>
+    <mass value="57.57723297188267"/>
+    <inertia ixx="0.249962" iyy="0.996985" izz="1.164824" ixy="-1e-06" iyz="-0.0" ixz="0.024698"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.245 -0.0 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/chassis_body_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.245 -0.0 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/chassis_body_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_link_1">
+  <inertial>
+    <origin xyz="0.0 3.147157462574169e-18 0.013038805276427479" rpy="0 0 0"/>
+    <mass value="0.3544633874883745"/>
+    <inertia ixx="7.2e-05" iyy="7.2e-05" izz="9.6e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.025 -0.0 -0.142" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/lidar_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.025 -0.0 -0.142" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/lidar_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_steering_link_1">
+  <inertial>
+    <origin xyz="-1.270927807439648e-13 -0.016102851688065814 0.0" rpy="0 0 0"/>
+    <mass value="0.04404898825034133"/>
+    <inertia ixx="1e-05" iyy="2e-06" izz="9e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 0.06 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_right_steering_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 0.06 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_right_steering_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_steering_link_1">
+  <inertial>
+    <origin xyz="2.095545958979983e-13 0.0161028516880658 0.0" rpy="0 0 0"/>
+    <mass value="0.04404898825034136"/>
+    <inertia ixx="1e-05" iyy="2e-06" izz="9e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 -0.06 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_left_steering_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 -0.06 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_left_steering_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_right_wheel_link_1">
+  <inertial>
+    <origin xyz="-1.021405182655144e-14 0.00899999999999998 0.0" rpy="0 0 0"/>
+    <mass value="0.567954398675557"/>
+    <inertia ixx="0.00024" iyy="0.000425" izz="0.00024" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_left_wheel_link_1">
+  <inertial>
+    <origin xyz="-1.021405182655144e-14 -0.00899999999999998 0.0" rpy="0 0 0"/>
+    <mass value="0.567954398675557"/>
+    <inertia ixx="0.00024" iyy="0.000425" izz="0.00024" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.15 -0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_left_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.15 -0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/front_left_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_right_wheel_link_1">
+  <inertial>
+    <origin xyz="1.021405182655144e-14 0.00899999999999998 0.0" rpy="0 0 0"/>
+    <mass value="0.567954398675557"/>
+    <inertia ixx="0.00024" iyy="0.000425" izz="0.00024" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15 0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/rear_right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15 0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/rear_right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_left_wheel_link_1">
+  <inertial>
+    <origin xyz="1.021405182655144e-14 -0.00899999999999998 0.0" rpy="0 0 0"/>
+    <mass value="0.567954398675557"/>
+    <inertia ixx="0.00024" iyy="0.000425" izz="0.00024" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15 -0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/rear_left_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15 -0.104 -0.035" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find Ackermann_Challenger_description)/meshes/rear_left_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="chassis_body_joint" type="fixed">
+  <origin xyz="0.245 0.0 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="chassis_body_link_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="-0.27 0.0 0.107" rpy="0 0 0"/>
+  <parent link="chassis_body_link_1"/>
+  <child link="lidar_link_1"/>
+</joint>
+
+<joint name="front_right_steering_joint" type="revolute">
+  <origin xyz="0.15 -0.06 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_right_steering_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+<joint name="front_left_steering_joint" type="revolute">
+  <origin xyz="0.15 0.06 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="front_left_steering_link_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.610865" lower="-0.610865" effort="100" velocity="100"/>
+</joint>
+
+<joint name="front_right_wheel_joint" type="continuous">
+  <origin xyz="0.0 -0.044 0.0" rpy="0 0 0"/>
+  <parent link="front_right_steering_link_1"/>
+  <child link="front_right_wheel_link_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="front_left_wheel_joint" type="continuous">
+  <origin xyz="0.0 0.044 0.0" rpy="0 0 0"/>
+  <parent link="front_left_steering_link_1"/>
+  <child link="front_left_wheel_link_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rear_right_wheel_joint" type="continuous">
+  <origin xyz="-0.15 -0.104 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_right_wheel_link_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="rear_left_wheel_joint" type="continuous">
+  <origin xyz="-0.15 0.104 0.035" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rear_left_wheel_link_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>
